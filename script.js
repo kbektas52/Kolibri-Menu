@@ -26,7 +26,7 @@ const DATA = {
     { name: "Çay", price: 60, img: "placeholder.svg", tags:["Klasik"] }
   ],
   "Tatlılar": [
-    { name: "Tiramisu", price: 95, img: "Tiramisu.png", tags:["Kakao"] },
+    { name: "Tiramisu", price: 95, img: "tiramisu.png", tags:["Kakao"] },
     { name: "San Sebastian", price: 110, img: "placeholder.svg", tags:["Cheesecake"] },
     { name: "Çikolatalı Sufle", price: 100, img: "cikolatalı_sufle.png", tags:["Sıcak"] },
     { name: "Profiterol", price: 90, img: "placeholder.svg", tags:["Krema"] },

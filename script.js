@@ -12,7 +12,7 @@ function toggleTheme(){
 const DATA = {
   "Soğuk İçecekler": [
     { name: "Ice Latte", price: 75, img: "images/cold_drinks/ıcelatte.png", tags:["Kahve","Sütlü"] },
-    { name: "Limonata", price: 60, img: "images/cold_drinks/limonata.png", tags:["Ferah","Ev Yapımı"] },
+    { name: "Limonata", price: 60, img: "limonata.png", tags:["Ferah","Ev Yapımı"] },
     { name: "Ice Tea Şeftali", price: 55, img: "assets/placeholder.svg", tags:["Demleme"] },
     { name: "Cold Brew", price: 80, img: "assets/placeholder.svg", tags:["Yoğun"] },
     { name: "Karpuz Smoothie", price: 68, img: "assets/placeholder.svg", tags:["Ferahlatıcı"] }, 

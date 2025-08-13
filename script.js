@@ -11,39 +11,39 @@ function toggleTheme(){
 // Sample data (you can extend)
 const DATA = {
   "Soğuk İçecekler": [
-    { name: "Ice Latte", price: 75, img: "images/cold_drinks/ıcelatte.png", tags:["Kahve","Sütlü"] },
+    { name: "Ice Latte", price: 75, img: "ıcelatte.png", tags:["Kahve","Sütlü"] },
     { name: "Limonata", price: 60, img: "limonata.png", tags:["Ferah","Ev Yapımı"] },
-    { name: "Ice Tea Şeftali", price: 55, img: "assets/placeholder.svg", tags:["Demleme"] },
-    { name: "Cold Brew", price: 80, img: "assets/placeholder.svg", tags:["Yoğun"] },
-    { name: "Karpuz Smoothie", price: 68, img: "assets/placeholder.svg", tags:["Ferahlatıcı"] }, 
-    { name: "Mango Smoothie", price: 70, img: "assets/placeholder.svg", tags:["Tropikal"] }  
+    { name: "Ice Tea Şeftali", price: 55, img: "placeholder.svg", tags:["Demleme"] },
+    { name: "Cold Brew", price: 80, img: "placeholder.svg", tags:["Yoğun"] },
+    { name: "Karpuz Smoothie", price: 68, img: "placeholder.svg", tags:["Ferahlatıcı"] }, 
+    { name: "Mango Smoothie", price: 70, img: "placeholder.svg", tags:["Tropikal"] }  
   ],
   "Sıcak İçecekler": [
-    { name: "Espresso", price: 55, img: "assets/placeholder.svg", tags:["Tek Shot"] },
-    { name: "Cappuccino", price: 75, img: "images/hot_drinks/cappucino.png", tags:["Köpüklü"] },
-    { name: "Latte", price: 70, img: "assets/placeholder.svg", tags:["Sütlü"] },
-    { name: "Türk Kahvesi", price: 60, img: "assets/placeholder.svg", tags:["Klasik"] },
-    { name: "Çay", price: 60, img: "assets/placeholder.svg", tags:["Klasik"] }
+    { name: "Espresso", price: 55, img: "placeholder.svg", tags:["Tek Shot"] },
+    { name: "Cappuccino", price: 75, img: "cappucino.png", tags:["Köpüklü"] },
+    { name: "Latte", price: 70, img: "placeholder.svg", tags:["Sütlü"] },
+    { name: "Türk Kahvesi", price: 60, img: "placeholder.svg", tags:["Klasik"] },
+    { name: "Çay", price: 60, img: "placeholder.svg", tags:["Klasik"] }
   ],
   "Tatlılar": [
-    { name: "Tiramisu", price: 95, img: "images/sweets/Tiramisu.png", tags:["Kakao"] },
-    { name: "San Sebastian", price: 110, img: "assets/placeholder.svg", tags:["Cheesecake"] },
-    { name: "Çikolatalı Sufle", price: 100, img: "images/sweets/cikolatalı_sufle.png", tags:["Sıcak"] },
-    { name: "Profiterol", price: 90, img: "assets/placeholder.svg", tags:["Krema"] },
-    { name: "Trileçe", price: 120, img: "images/sweets/Trileçe.png", tags:["Karamel"] }
+    { name: "Tiramisu", price: 95, img: "Tiramisu.png", tags:["Kakao"] },
+    { name: "San Sebastian", price: 110, img: "placeholder.svg", tags:["Cheesecake"] },
+    { name: "Çikolatalı Sufle", price: 100, img: "cikolatalı_sufle.png", tags:["Sıcak"] },
+    { name: "Profiterol", price: 90, img: "placeholder.svg", tags:["Krema"] },
+    { name: "Trileçe", price: 120, img: "Trileçe.png", tags:["Karamel"] }
   ],
   "Atıştırmalıklar": [
-    { name: "Tost (Kaşarlı)", price: 85, img: "images/snacks/kasarlı_tost.png", tags:["Vejetaryen"] },
-    { name: "Avokadolu Sandviç", price: 120, img: "assets/placeholder.svg", tags:["Fit"] },
-    { name: "Patates Kızartması", price: 70, img: "assets/placeholder.svg", tags:["Paylaşım"] }
+    { name: "Tost (Kaşarlı)", price: 85, img: "kasarlı_tost.png", tags:["Vejetaryen"] },
+    { name: "Avokadolu Sandviç", price: 120, img: "placeholder.svg", tags:["Fit"] },
+    { name: "Patates Kızartması", price: 70, img: "placeholder.svg", tags:["Paylaşım"] }
   ]
 };
 
 const CATEGORY_IMAGES = {
-  "Soğuk İçecekler": "images/category/sogukicecekler.png",
-  "Sıcak İçecekler": "images/category/sicakicecekler.png",
-  "Tatlılar": "images/category/tatlılar.png",
-  "Atıştırmalıklar": "images/category/atıstırmalıklar.png"
+  "Soğuk İçecekler": "sogukicecekler.png",
+  "Sıcak İçecekler": "sicakicecekler.png",
+  "Tatlılar": "tatlılar.png",
+  "Atıştırmalıklar": "atıstırmalıklar.png"
 };
 
 function openCategory(cat){
@@ -60,7 +60,6 @@ function openCategory(cat){
   renderProducts(cat);
 }
 
-// Ürün render fonksiyonu responsive grid ile zaten uyumlu
 function renderProducts(cat){
   const q = searchInput.value.trim().toLowerCase();
   const items = (DATA[cat]||[]).filter(x => x.name.toLowerCase().includes(q) || x.tags.join(' ').toLowerCase().includes(q));

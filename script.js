@@ -7,16 +7,16 @@ document.querySelector('#toggle-theme').addEventListener('click', toggleTheme);
 
 // Load DATA from localStorage if exists
 let DATA = JSON.parse(localStorage.getItem('kolibri-data')) || {
-  "Soğuk İçecekler":[{name:"Ice Latte",price:75,img:"images/cold_drinks/icelatte.png",tags:["Kahve","Sütlü"]}],
+  "Soğuk İçecekler":[{name:"Ice Latte",price:75,img:"icelatte.png",tags:["Kahve","Sütlü"]}],
   "Sıcak İçecekler":[{name:"Espresso",price:55,img:"assets/placeholder.svg",tags:["Tek Shot"]}],
-  "Tatlılar":[{name:"Tiramisu",price:95,img:"images/sweets/Tiramisu.png",tags:["Kakao"]}],
-  "Atıştırmalıklar":[{name:"Tost (Kaşarlı)",price:85,img:"images/snacks/kasarli_tost.png",tags:["Vejetaryen"]}]
+  "Tatlılar":[{name:"Tiramisu",price:95,img:"Tiramisu.png",tags:["Kakao"]}],
+  "Atıştırmalıklar":[{name:"Tost (Kaşarlı)",price:85,img:"kasarli_tost.png",tags:["Vejetaryen"]}]
 };
 const CATEGORY_IMAGES = {
-  "Soğuk İçecekler":"images/category/sogukicecekler.png",
-  "Sıcak İçecekler":"images/category/sicakicecekler.png",
-  "Tatlılar":"images/category/tatlilar.png",
-  "Atıştırmalıklar":"images/category/atistirmaliklar.png"
+  "Soğuk İçecekler":"sogukicecekler.png",
+  "Sıcak İçecekler":"sicakicecekler.png",
+  "Tatlılar":"tatlilar.png",
+  "Atıştırmalıklar":"atistirmaliklar.png"
 };
 
 document.getElementById('admin-btn').addEventListener('click', ()=>{

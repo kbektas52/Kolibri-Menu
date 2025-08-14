@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kolibri Café | QR Menü</title>
+<meta name="theme-color" content="#C9A227">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Firebase (compat) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="assets/logo.svg" alt="Kolibri Café">
+      <div class="brand">Kolibri Café<br><small>QR Menü</small></div>
+    </div>
+    <div class="actions">
+      <button id="toggle-theme" class="icon-btn" aria-label="Tema">
+        <span class="dot" aria-hidden="true"></span> Tema
+      </button>
+      <button id="admin-btn" class="icon-btn">Admin</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section id="home">
+    <div class="hero">
+      <h1 class="title">Hoş geldiniz!</h1>
+      <p class="subtitle">Kategorileri keşfederek siparişinizi seçin. Aşağıdan başlayın ↓</p>
+      <div class="searchbar">
+        <input id="search" class="input" placeholder="Ürün veya etiket ara (örn. latte, çikolata, soğuk)">
+      </div>
+    </div>
+    <div id="categories" class="categories"></div>
+  </section>
+
+  <section id="products-view" style="display:none">
+    <div class="breadcrumb" id="breadcrumb"></div>
+    <div style="display:flex; align-items:center; gap:10px; margin: 8px 0 16px;">
+      <button class="back-btn" id="back-btn">← Geri</button>
+      <input id="search-category" class="input" placeholder="Bu kategoride ara…">
+    </div>
+    <div id="product-grid" class="grid"></div>
+  </section>
+
+  <p class="footer">© <strong>Kolibri Café</strong> — Afiyet olsun!</p>
+</main>
+
+<!-- Firebase config + app -->
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyB0ovBZWhYLM42ld58gMydBeaaPsUcI-0k",
+    authDomain: "kolibri-menu-bae3a.firebaseapp.com",
+    databaseURL: "https://kolibri-menu-bae3a-default-rtdb.firebaseio.com",
+    projectId: "kolibri-menu-bae3a",
+    storageBucket: "kolibri-menu-bae3a.firebasestorage.app",
+    messagingSenderId: "903898711438",
+    appId: "1:903898711438:web:f545eaae8f97bd1c34d0df",
+    measurementId: "G-QCRYDKMB4L"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

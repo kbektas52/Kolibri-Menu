@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kolibri Café | Admin Panel</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<aside>
+  <h2>Admin Panel</h2>
+  <button data-section="category-section">Kategori İşlemleri</button>
+  <button data-section="add-product-section">Ürün Ekle</button>
+  <button data-section="update-product-section">Ürün Güncelle</button>
+  <button data-section="delete-product-section">Ürün Sil</button>
+</aside>
+
+<!-- login form -->
+<div id="login-form">
+  <h2>Admin Girişi</h2>
+  <input type="email" id="username" placeholder="Email">
+  <input type="password" id="password" placeholder="Şifre">
+  <button id="login-btn">Giriş</button>
+  <p id="login-msg"></p>
+</div>
+
+<!-- admin panel -->
+<div id="admin-panel" style="display:none;">
+  <button id="logout-btn">Çıkış</button>
+
+  <main>
+    <div id="category-section" class="section">
+      <h3>Yeni Kategori Ekle</h3>
+      <input type="text" id="new-category-name" placeholder="Kategori adı">
+      <input type="file" id="new-category-img" accept="image/*">
+      <button id="add-cat-btn">Ekle</button>
+
+      <h3>Kategori Güncelle</h3>
+      <select id="update-category-select">
+        <option value="">Kategori Seçin</option>
+      </select>
+      <input type="text" id="update-category-name" placeholder="Yeni isim">
+      <input type="file" id="update-category-img" accept="image/*">
+      <button id="update-cat-btn">Güncelle</button>
+
+      <h3>Kategori Sil</h3>
+      <select id="delete-category-select">
+        <option value="">Kategori Seçin</option>
+      </select>
+      <button id="delete-cat-btn">Sil</button>
+    </div>
+
+    <div id="add-product-section" class="section">
+      <h3>Yeni Ürün Ekle</h3>
+      <input type="text" id="new-name" placeholder="Ürün adı">
+      <input type="number" id="new-price" placeholder="Fiyat">
+      <input type="text" id="new-tags" placeholder="Etiketler, virgülle ayırın">
+      <select id="new-category"></select>
+      <input type="file" id="new-img" accept="image/*">
+      <button id="save-new-btn">Kaydet</button>
+    </div>
+
+    <div id="update-product-section" class="section">
+      <h3>Ürün Güncelle</h3>
+      <select id="product-select"></select>
+      <input type="text" id="update-name" placeholder="Yeni ürün adı">
+      <input type="number" id="update-price" placeholder="Yeni fiyat">
+      <input type="text" id="update-tags" placeholder="Yeni etiketler, virgülle ayırın">
+      <input type="file" id="update-img" accept="image/*">
+      <button id="save-update-btn">Güncelle</button>
+    </div>
+
+    <div id="delete-product-section" class="section">
+      <h3>Ürün Sil</h3>
+      <select id="delete-product-select"></select>
+      <button id="delete-btn">Sil</button>
+    </div>
+  </main>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+<script src="admin.js"></script>
+
+<script>
+  // Yan menü sekme kontrolü
+  document.querySelectorAll('aside button').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const sec = btn.dataset.section;
+      document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+      document.getElementById(sec).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
